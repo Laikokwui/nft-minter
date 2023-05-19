@@ -1,3 +1,4 @@
+"use client";
 
 import { Box, Center, Spacer, Stack } from "@chakra-ui/react"
 import type { NextPage } from "next"

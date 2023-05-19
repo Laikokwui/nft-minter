@@ -1,4 +1,4 @@
-import React from "react";
+
 import { HStack, Spacer } from "@chakra-ui/react"
 import { FC } from "react"
 import styles from "../styles/Home.module.css"

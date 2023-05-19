@@ -1,10 +1,8 @@
-'use client';
 
 import { Box, Center, Spacer, Stack } from "@chakra-ui/react"
 import type { NextPage } from "next"
 import Head from "next/head"
 import styles from "../styles/Home.module.css"
-import React from "react"
 
 
 import NavBar from "../components/Narbar"
@@ -16,6 +14,7 @@ import Connected from "../components/Connected"
 const HomePage: NextPage = () => {
   const { connected } = useWallet()
 
+  console.log(connected);
   return (
     <div className={styles.container}>
       <Head>
@@ -27,7 +26,7 @@ const HomePage: NextPage = () => {
       <Box
         w="full"
         h="calc(100vh)"
-        bgImage={"url(/home-background.svg)"}
+        bgImage={connected ? "" :"url(/src/app/assets/home-background.svg)"}
         backgroundPosition="center"
       >
         <Stack w="full" h="calc(100vh)" justify="center">
@@ -36,7 +35,7 @@ const HomePage: NextPage = () => {
           <Spacer />
             <Center>
 						  { /* If connected, the second view, otherwise the first */ }
-              <Disconnected />
+              <Center>{connected ? <Connected /> : <Disconnected />}</Center>
             </Center>
           <Spacer />
 
